@@ -1,0 +1,75 @@
+import os
+import markdown
+import glob
+from collections import OrderedDict
+
+navbar_boilerplate = """\
+    <nav>
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="/">Resume</a></li>
+            <li><a href="/">Contact</a><li>
+        </ul>
+        <hr>
+    </nav>
+"""
+index_boilerplate = f"""\
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <link rel="stylesheet" href="../static/style.css">
+</head>
+<body>
+    {navbar_boilerplate}
+    <img src="../assets/img/20231203--maharajatoad.jpeg" style="max-width:20%;min-width:40px;float:right;border-radius: 50%;" alt="profile">
+    <div>
+        <h1>RITAV JASH</h1>
+        <h3><em>On Computer Science, Math etc</em></h3>
+    </div>
+    <p>Hi! I am Ritav, UG student interested in CS Theory, ML and Security.</p>
+    <ul>
+"""
+footer_boilerplate = """
+        </ul>
+        <footer>
+            <hr>
+            Copy, Right? |
+            <a href="/">Linkedin</a>
+            |
+            <a href="/">Github</a>
+        </footer>
+    </body>
+</html>
+"""
+if not os.path.exists('gen'):
+    os.makedirs('gen')
+
+md_files = glob.glob('../content/*.md')
+date_title_dict = {}
+
+for md_file in md_files:
+    date = os.path.splitext(md_file)[0]
+    with open(md_file, 'r') as f:
+        lines = f.readlines()
+        title = lines[0].strip().lstrip('# ').rstrip()  # Get title from first line
+        text = ''.join(lines)  # Get all the text including the title
+        date_title_dict[date] = title
+
+    html = markdown.markdown(text)
+
+    html_file = 'gen/' + md_file.rsplit('.', 1)[0] + '.html'
+    with open(html_file, 'w') as f:
+        f.write('<html>\n<head>\n<title>' + title + '</title>\n')
+        f.write('<link rel="stylesheet" href="../static/style.css">\n</head>\n<body>\n')
+        f.write(navbar_boilerplate)
+        f.write(html)
+        f.write('\n</body>\n</html>')
+
+sorted_dict = OrderedDict(sorted(date_title_dict.items()))
+
+with open('gen/index.html', 'w') as index:
+    index.write(index_boilerplate + '\n')
+    for date, title in sorted_dict.items():
+            index.write(f'<li>{date} - <a href="{date}.html">{title}</a></li>\n')
+    index.write(footer_boilerplate)
