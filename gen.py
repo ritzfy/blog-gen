@@ -8,7 +8,7 @@ navbar_boilerplate = """\
         <ul class="menu">
             <li><a href="index.html">Home</a></li>
             <li><a href="/">Resume</a></li>
-            <li><a href="/">Contact</a><li>
+            <li><a href="mailto:hello.w28cw@slmail.me">Contact</a><li>
         </ul>
         <hr>
     </nav>
@@ -34,9 +34,9 @@ footer_boilerplate = """
         <footer>
             <hr>
             Copy, Right? |
-            <a href="/">Linkedin</a>
+            <a href="https://www.linkedin.com/in/ritav-j-029a9b246">Linkedin</a>
             |
-            <a href="/">Github</a>
+            <a href="https://github.com/ritzfy">Github</a>
         </footer>
     </body>
 </html>
