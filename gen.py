@@ -44,25 +44,25 @@ footer_boilerplate = """
 if not os.path.exists('gen'):
     os.makedirs('gen')
 
-md_files = glob.glob('../content/*.md')
+md_files = glob.glob('content/*.md')
+print(md_files) 
 date_title_dict = {}
-
 for md_file in md_files:
-    date = os.path.splitext(md_file)[0]
+    date = os.path.splitext(os.path.basename(md_file))[0]
     with open(md_file, 'r') as f:
         lines = f.readlines()
         title = lines[0].strip().lstrip('# ').rstrip()  # Get title from first line
         text = ''.join(lines)  # Get all the text including the title
         date_title_dict[date] = title
+        print(f'{date}-{title}')
 
     html = markdown.markdown(text)
-
-    html_file = 'gen/' + md_file.rsplit('.', 1)[0] + '.html'
+    html_file = "gen/" + os.path.basename(md_file).rsplit('.', 1)[0] + '.html'
     with open(html_file, 'w') as f:
         f.write('<html>\n<head>\n<title>' + title + '</title>\n')
         f.write('<link rel="stylesheet" href="../static/style.css">\n</head>\n<body>\n')
         f.write(navbar_boilerplate)
-        f.write(html)
+        f.write(f'{html}\n')
         f.write(footer_boilerplate)
 
 sorted_dict = OrderedDict(sorted(date_title_dict.items()))
@@ -71,5 +71,5 @@ with open('gen/index.html', 'w') as index:
     index.write(index_boilerplate + '\n')
     for date, title in sorted_dict.items():
             index.write(f'<li>{date} - <a href="{date}.html">{title}</a></li>\n')
-    index.write(f'</ul>\n')
-    index.write(footer_boilerplate)
+    index.write(f'</ul>')
+    index.write(f'{footer_boilerplate}')
