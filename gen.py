@@ -45,7 +45,6 @@ if not os.path.exists('gen'):
     os.makedirs('gen')
 
 md_files = glob.glob('content/*.md')
-print(md_files) 
 date_title_dict = {}
 for md_file in md_files:
     date = os.path.splitext(os.path.basename(md_file))[0]
