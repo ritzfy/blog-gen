@@ -28,6 +28,7 @@ index_boilerplate = f"""\
         <h3><em>On Computer Science, Math etc</em></h3>
     </div>
     <p>Hi! I am Ritav, UG student interested in CS Theory, ML and Security.</p>
+    <h3>Posts</h3>
     <ul>
 """
 footer_boilerplate = """
