@@ -31,7 +31,6 @@ index_boilerplate = f"""\
     <ul>
 """
 footer_boilerplate = """
-        </ul>
         <footer>
             <hr>
             Copy, Right? |
@@ -64,7 +63,7 @@ for md_file in md_files:
         f.write('<link rel="stylesheet" href="../static/style.css">\n</head>\n<body>\n')
         f.write(navbar_boilerplate)
         f.write(html)
-        f.write('\n</body>\n</html>')
+        f.write(footer_boilerplate)
 
 sorted_dict = OrderedDict(sorted(date_title_dict.items()))
 
@@ -72,4 +71,5 @@ with open('gen/index.html', 'w') as index:
     index.write(index_boilerplate + '\n')
     for date, title in sorted_dict.items():
             index.write(f'<li>{date} - <a href="{date}.html">{title}</a></li>\n')
+    index.write(f'</ul>\n')
     index.write(footer_boilerplate)
