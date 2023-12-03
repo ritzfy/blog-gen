@@ -17,7 +17,7 @@ index_boilerplate = f"""\
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Document</title>
+    <title>RITZFY</title>
     <link rel="stylesheet" href="../static/style.css">
 </head>
 <body>
