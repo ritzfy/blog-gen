@@ -3,7 +3,7 @@ import markdown
 import glob
 from collections import OrderedDict
 
-navbar_boilerplate = """\
+navbar_boilerplate = f"""\
     <nav>
         <ul class="menu">
             <li><a href="index.html">Home</a></li>
@@ -31,7 +31,7 @@ index_boilerplate = f"""\
     <h2>Posts</h2>
     <ul>
 """
-footer_boilerplate = """
+footer_boilerplate = f"""
         <footer>
             <hr>
             Copy, Right? |
