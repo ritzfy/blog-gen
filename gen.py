@@ -1,6 +1,7 @@
 import os
 import markdown
 import glob
+import shutil
 from collections import OrderedDict
 
 navbar_boilerplate = f"""\
@@ -73,3 +74,5 @@ with open('gen/index.html', 'w') as index:
             index.write(f'<li>{date} - <a href="{date}.html">{title}</a></li>\n')
     index.write(f'</ul>')
     index.write(f'{footer_boilerplate}')
+
+shutil.copy2("static/style.css", "gen/")
