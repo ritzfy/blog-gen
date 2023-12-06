@@ -19,7 +19,7 @@ index_boilerplate = f"""\
 <html lang="en">
 <head>
     <title>RITZFY</title>
-    <link rel="stylesheet" href="../static/style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     {navbar_boilerplate}
