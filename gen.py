@@ -60,7 +60,7 @@ for md_file in md_files:
     html = markdown.markdown(text)
     html_file = "gen/" + os.path.basename(md_file).rsplit('.', 1)[0] + '.html'
     with open(html_file, 'w') as f:
-        f.write('<html>\n<head>\n<title>' + title + '</title>\n')
+        f.write('<!DOCTYPE html>\n<html lang="en">\n<head>\n<title>' + title + '</title>\n')
         f.write('<link rel="stylesheet" href="../static/style.css">\n</head>\n<body>\n')
         f.write(navbar_boilerplate)
         f.write(f'{html}\n')
