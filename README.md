@@ -9,7 +9,8 @@ Stupidly simple blog generation script with support for classless CSS
 ## Requirements
 `python`, `markdown` which uses John Gruber's implementation of markdown
 
-after that just run 
+clone the repo and and run `rm -rf assets/* content/* gen/*` to clean the directories so you can put your own stuff
+Input your own details in config.ini and just run, 
 ```bash
 python gen.py
 ```
