@@ -3,13 +3,14 @@ import markdown
 import glob
 import shutil
 from collections import OrderedDict
+import parseconfig as pc
 
 navbar_boilerplate = f"""\
     <nav>
         <ul class="menu">
             <li><a href="index.html">Home</a></li>
-            <li><a href="/">Resume</a></li>
-            <li><a href="mailto:hello.w28cw@slmail.me">Contact</a><li>
+            <li><a href="{pc.config_dict['links']['resume']}">Resume</a></li>
+            <li><a href="mailto:{pc.config_dict['links']['email']}">Contact</a><li>
         </ul>
         <hr>
     </nav>
@@ -23,12 +24,12 @@ index_boilerplate = f"""\
 </head>
 <body>
     {navbar_boilerplate}
-    <img src="../assets/img/20231203--maharajatoad.jpeg" style="max-width:20%;min-width:40px;float:right;border-radius: 50%;" alt="profile">
+    <img src="{pc.config_dict['info']['pic']}" style="max-width:20%;min-width:40px;float:right;border-radius: 50%;" alt="profile">
     <div>
-        <h1>RITAV JASH</h1>
-        <h3><em>On Computer Science, Math etc</em></h3>
+        <h1>{pc.config_dict['info']['name']}</h1>
+        <h3><em>{pc.config_dict['info']['sec']}</em></h3>
     </div>
-    <p>Hi! I am Ritav, UG student interested in CS Theory, ML and Security.</p>
+    <p>{pc.config_dict['info']['desc']}</p>
     <h2>Posts</h2>
     <ul>
 """
@@ -36,9 +37,9 @@ footer_boilerplate = f"""
         <footer>
             <hr>
             Copy, Right? |
-            <a href="https://www.linkedin.com/in/ritav-j-029a9b246">Linkedin</a>
+            <a href="{pc.config_dict['links']['linkedin']}">Linkedin</a>
             |
-            <a href="https://github.com/ritzfy">Github</a>
+            <a href="{pc.config_dict['links']['github']}">Github</a>
         </footer>
     </body>
 </html>
