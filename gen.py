@@ -36,10 +36,11 @@ index_boilerplate = f"""\
 footer_boilerplate = f"""
         <footer>
             <hr>
-            Copy, Right? |
-            <a href="{pc.config_dict['links']['linkedin']}">Linkedin</a>
+            <a href="https://github.com/ritzfy/blog-gen">copy, right?</a>
             |
-            <a href="{pc.config_dict['links']['github']}">Github</a>
+            <a href="https://www.linkedin.com/in/ritav-j-029a9b246">linkedin</a>
+            |
+            <a href="https://github.com/ritzfy">github</a>
         </footer>
     </body>
 </html>
