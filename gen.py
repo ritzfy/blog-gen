@@ -19,7 +19,7 @@ index_boilerplate = f"""\
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>RITZFY</title>
+    <title>{pc.config_dict['info']['name']}</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -30,7 +30,7 @@ index_boilerplate = f"""\
         <h3><em>{pc.config_dict['info']['sec']}</em></h3>
     </div>
     <p>{pc.config_dict['info']['desc']}</p>
-    <h2>Posts</h2>
+    <h2>Activity</h2>
     <ul>
 """
 footer_boilerplate = f"""

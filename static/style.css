@@ -1,16 +1,21 @@
-body {
-  font-family: Optima, Candara, Calibri, Arial, sans-serif;
-}
+@import url('https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,800&family=Syne:wght@400;800&family=Victor+Mono:wght@600&display=swap');
+
 code {
-  font-family: "Lucida Console", Monaco, monospace;
+  font-family: 'Victor Mono', monospace;
   font-size: 85%;
 }
 
 body {
+  font-family: 'Syne', sans-serif;
+  font-weight: normal;
   max-width: 800px;
   margin: auto;
   padding: 1em;
-  line-height: 1.5;
+}
+
+h2, h3, h4 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: normal;
 }
 
 /* header and footer areas */
@@ -56,3 +61,9 @@ table {
 table thead th { border-bottom: 1px solid #ddd; }
 th, td { padding: 5px; }
 thead, tfoot, tr:nth-child(even) { background: #eee; }
+
+h1 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: bolder;
+  font-size: 48px;
+}
