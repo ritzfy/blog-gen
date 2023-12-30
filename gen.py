@@ -23,13 +23,14 @@ index_boilerplate = f"""\
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    {navbar_boilerplate}
-    <img src="{pc.config_dict['info']['pic']}" style="max-width:20%;min-width:40px;float:right;border-radius: 50%;" alt="profile">
     <div>
-        <h1>{pc.config_dict['info']['name']}</h1>
+        <img src="{pc.config_dict['info']['pic']}" style="max-width:20%;min-width:40px;float:right;border-radius: 50%; margin-bottom: 3%; margin-left: 3%;margin-right: 3%;margin-top: 0%;" alt="profile">
+        <h1 style="margin-bottom: 0%;">{pc.config_dict['info']['name']}</h1>
+            <a href="{pc.config_dict['links']['resume']}">Resume</a> | <a href="mailto:{pc.config_dict['links']['email']}">Contact</a>
         <h3><em>{pc.config_dict['info']['sec']}</em></h3>
+        <p>I{pc.config_dict['info']['desc']}</p>
     </div>
-    <p>{pc.config_dict['info']['desc']}</p>
+ 
     <h2>Activity</h2>
     <ul>
 """
