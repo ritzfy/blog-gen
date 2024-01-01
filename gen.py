@@ -21,6 +21,7 @@ index_boilerplate = f"""\
 <head>
     <title>{pc.config_dict['info']['name']}</title>
     <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
 </head>
 <body>
     <div>
@@ -28,7 +29,7 @@ index_boilerplate = f"""\
         <h1 style="margin-bottom: 0%;">{pc.config_dict['info']['name']}</h1>
             <a href="{pc.config_dict['links']['resume']}">Resume</a> | <a href="mailto:{pc.config_dict['links']['email']}">Contact</a>
         <h3><em>{pc.config_dict['info']['sec']}</em></h3>
-        <p>I{pc.config_dict['info']['desc']}</p>
+        <p>{pc.config_dict['info']['desc']}</p>
     </div>
  
     <h2>Activity</h2>
@@ -65,6 +66,7 @@ for md_file in md_files:
     with open(html_file, 'w') as f:
         f.write('<!DOCTYPE html>\n<html lang="en">\n<head>\n<title>' + title + '</title>\n')
         f.write('<link rel="stylesheet" href="style.css">\n</head>\n<body>\n')
+        f.write(f"""<meta name="viewport" content="width=device-width, initial-scale=1.0">""")
         f.write(navbar_boilerplate)
         f.write(f'{html}\n')
         f.write(footer_boilerplate)
