@@ -13,6 +13,12 @@ body {
   padding: 1em;
 }
 
+h1 {
+  font-family: 'Bricolage Grotesque', sans-serif;
+  font-weight: bolder;
+  font-size: 48px;
+}
+
 h2, h3, h4 {
   font-family: 'Bricolage Grotesque', sans-serif;
   font-weight: normal;
@@ -35,7 +41,7 @@ hr {
 }
 
 /* code */
-pre {
+pre.code {
   border: 1px solid #ddd;
   box-shadow: 5px 5px 5px #eee;
   padding: 1em;
@@ -61,9 +67,3 @@ table {
 table thead th { border-bottom: 1px solid #ddd; }
 th, td { padding: 5px; }
 thead, tfoot, tr:nth-child(even) { background: #eee; }
-
-h1 {
-  font-family: 'Bricolage Grotesque', sans-serif;
-  font-weight: bolder;
-  font-size: 48px;
-}
