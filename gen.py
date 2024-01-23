@@ -61,7 +61,7 @@ for md_file in md_files:
         date_title_dict[date] = title
         print(f'{date}-{title}')
 
-    html = markdown.markdown(text, extensions=['fenced_code'])
+    html = markdown.markdown(text, extensions=['fenced_code', 'tables'])
     html_file = "gen/" + os.path.basename(md_file).rsplit('.', 1)[0] + '.html'
     with open(html_file, 'w') as f:
         f.write('<!DOCTYPE html>\n<html lang="en">\n<head>\n<title>' + title + '</title>\n')
